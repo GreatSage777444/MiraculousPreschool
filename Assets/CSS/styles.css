@@ -97,7 +97,7 @@ main {
 }
 
 .card-container {
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Fredoka One';
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -168,7 +168,7 @@ main {
   line-height: 1.8;
   color: #333;
   backdrop-filter: blur(2px);
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One';
   text-align: center;
 }
 
@@ -187,7 +187,7 @@ main {
   margin-bottom: 1rem;
   text-align: center;
   text-shadow: 2px 2px #ffd700;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'Fredoka One';
   animation: bounce 1.5s infinite alternate;
 }
 
@@ -196,7 +196,7 @@ main {
   line-height: 1.8;
   color: #444;
   text-align: justify;
-  font-family:'Fredoka One', cursive;
+  font-family:'Fredoka One';
   padding: 1.2rem;
   border-radius: 15px;
   transition: transform 0.3s;
