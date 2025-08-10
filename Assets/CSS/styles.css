@@ -4,6 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+    font-family: 'Fredoka', sans-serif !important;
+}
+* {
+    font-family: 'Fredoka', sans-serif !important;
+}
+
 
 body {
   background-color: #fdf6f0;
