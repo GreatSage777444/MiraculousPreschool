@@ -677,6 +677,14 @@ footer {
   align-items: center;
   z-index: 9999;
 }
+.menu-toggle {
+  position: relative;
+  z-index: 1200;
+}
+
+.brand-cloud {
+  z-index: -1;
+}
 
 /* =========================
    RESPONSIVE
@@ -696,44 +704,53 @@ footer {
 @media (max-width: 768px) {
   .site-header {
     padding: 10px 14px;
-    flex-direction: column;
-    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .logo-container {
-    margin-top: 4px;
-    width: 100%;
+    margin-top: 0;
+    width: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
   }
 
   .logo-container a {
+    display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 6px;
   }
 
   .brand-wrap {
-    gap: 8px;
-    padding: 10px 12px 14px;
-    transform: scale(0.95);
+    gap: 6px;
+    padding: 6px 8px 8px;
+    transform: none;
   }
 
   .brand-cloud {
-    left: -10px;
-    top: -45px;
-    width: calc(100% + 90px);
-    height: calc(100% + 80px);
+    left: -8px;
+    top: -24px;
+    width: calc(100% + 48px);
+    height: calc(100% + 42px);
   }
 
   .logo {
-    height: 56px;
+    height: 46px;
+    width: auto;
   }
 
   .name {
-    height: 34px;
+    height: 28px;
+    width: auto;
   }
 
   .brand-text {
@@ -742,14 +759,18 @@ footer {
   }
 
   .preschool-text {
-    font-size: 1.25rem;
+    font-size: 1rem;
     margin-top: -2px;
     margin-left: 4px;
   }
 
   .navbar {
-    width: 100%;
-    justify-content: center;
+    width: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    position: relative;
   }
 
   .menu-toggle {
@@ -757,12 +778,18 @@ footer {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
-    margin-bottom: 8px;
+    margin-bottom: 0;
+    z-index: 1200;
+    position: relative;
+    padding: 8px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.88);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   }
 
   .menu-toggle span {
-    width: 28px;
-    height: 4px;
+    width: 26px;
+    height: 3px;
     background: #2f355c;
     border-radius: 999px;
   }
@@ -774,9 +801,13 @@ footer {
     text-align: center;
     gap: 10px;
     padding: 14px;
-    border-radius: 20px;
-    background: rgba(255,255,255,0.72);
+    margin-top: 10px;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px rgba(75, 79, 143, 0.14);
+    order: 3;
+    flex-basis: 100%;
   }
 
   .navbar ul.active {
@@ -786,8 +817,13 @@ footer {
   .navbar a {
     display: block;
     width: 100%;
-    font-size: 0.98rem;
-    padding: 12px 14px;
+    font-size: 0.96rem;
+    padding: 11px 12px;
+  }
+
+  section {
+    padding: 28px 16px;
+    margin: 0 auto 26px;
   }
 
   .hero {
@@ -812,11 +848,6 @@ footer {
     font-size: 1rem;
   }
 
-  section {
-    padding: 28px 16px;
-    margin: 0 auto 26px;
-  }
-
   .card-container {
     grid-template-columns: 1fr;
     justify-items: center;
@@ -837,7 +868,8 @@ footer {
     gap: 12px;
   }
 
-  .gallery img {
+  .gallery img,
+  .gallery-video video {
     height: 150px;
   }
 
@@ -859,8 +891,32 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .site-header {
+    padding: 8px 10px;
+  }
+
   .brand-wrap {
-    transform: scale(0.90);
+    padding: 4px 6px 6px;
+  }
+
+  .brand-cloud {
+    left: -6px;
+    top: -20px;
+    width: calc(100% + 38px);
+    height: calc(100% + 34px);
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .name {
+    height: 24px;
+  }
+
+  .preschool-text {
+    font-size: 0.9rem;
+    margin-left: 3px;
   }
 
   .hero {
@@ -880,7 +936,8 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .gallery img {
+  .gallery img,
+  .gallery-video video {
     height: 190px;
   }
 
@@ -895,13 +952,6 @@ footer {
   .hero-buttons {
     flex-direction: column;
     align-items: center;
-  }
-
-  .brand-cloud {
-    left: -10px;
-    top: -50px;
-    width: calc(100% + 100px);
-    height: calc(100% + 80px);
   }
 }
 /* Final force for consistent header across all pages */
