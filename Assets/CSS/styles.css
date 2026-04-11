@@ -774,30 +774,53 @@ footer {
     border-radius: 999px;
   }
 
+ /* --- UPDATED FULL SCREEN MENU --- */
+ @media (max-width: 768px) {
+  /* ... Keep all your site-header, logo, and brand-wrap code exactly the same ... */
+
   .navbar ul {
-    grid-column: 1 / -1;
-    display: none;
+    display: none; 
     flex-direction: column;
-    width: 100%;
-    margin-top: 8px;
-    padding: 12px;
-    gap: 8px;
-    border-radius: 16px;
-    background: rgba(255,255,255,0.96);
-    box-shadow: 0 10px 20px rgba(75, 79, 143, 0.12);
+    justify-content: center;
+    align-items: center;
+    gap: 20px !important;
+
+    /* These are the only lines that change it to Full Screen */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+    background: var(--gradient-main); 
+    z-index: 999; /* Sits behind your menu-toggle */
+    padding: 0 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
   }
 
   .navbar ul.active {
-    display: flex;
-    animation: slideDown 0.25s ease;
+    display: flex; 
   }
 
+  /* Adjust links to be bigger targets for the full screen */
   .navbar a {
     display: block;
-    width: 100%;
-    padding: 10px 12px;
-    font-size: 0.95rem;
+    width: 80% !important;
+    padding: 15px !important;
+    font-size: 1.2rem !important;
+    text-align: center;
+    background: white !important;
+    border-radius: 30px !important;
   }
+
+  /* Ensure your toggle stays on top of the full screen */
+  .menu-toggle {
+    display: flex;
+    position: relative;
+    z-index: 1001; 
+  }
+}
 
   @keyframes slideDown {
     from {
