@@ -778,14 +778,17 @@ footer {
  @media (max-width: 768px) {
   /* ... Keep all your site-header, logo, and brand-wrap code exactly the same ... */
 
+@media (max-width: 768px) {
+  /* ... Keep your site-header, logo, and brand-wrap code exactly as it is ... */
+
   .navbar ul {
     display: none; 
-    flex-direction: column;
+    flex-direction: column; /* Stacks items vertically so text doesn't overlap */
     justify-content: center;
     align-items: center;
-    gap: 20px !important;
+    gap: 15px !important;
 
-    /* These are the only lines that change it to Full Screen */
+    /* Full Screen Logic */
     position: fixed; 
     top: 0;
     left: 0;
@@ -793,8 +796,8 @@ footer {
     height: 100vh;
     
     background: var(--gradient-main); 
-    z-index: 999; /* Sits behind your menu-toggle */
-    padding: 0 !important;
+    z-index: 999;
+    padding: 20px !important; /* Adds breathing room around the list */
     border-radius: 0 !important;
     margin: 0 !important;
   }
@@ -803,25 +806,28 @@ footer {
     display: flex; 
   }
 
-  /* Adjust links to be bigger targets for the full screen */
   .navbar a {
-    display: block;
-    width: 80% !important;
-    padding: 15px !important;
-    font-size: 1.2rem !important;
-    text-align: center;
+    display: flex;          /* Changed to flex for centering text */
+    align-items: center;
+    justify-content: center;
+    width: 85% !important;  /* Prevents the box from hitting screen edges */
+    max-width: 300px;       /* Keeps boxes from getting too wide on tablets */
+    padding: 14px 20px !important;
+    font-size: 1.1rem !important;
     background: white !important;
-    border-radius: 30px !important;
+    border-radius: 999px !important;
+    text-align: center;
+    white-space: nowrap;    /* Prevents text from breaking into two lines */
+    box-shadow: var(--shadow-sm);
   }
 
-  /* Ensure your toggle stays on top of the full screen */
+  /* Ensure the hamburger button stays on top of the full screen */
   .menu-toggle {
     display: flex;
     position: relative;
     z-index: 1001; 
   }
 }
-
   @keyframes slideDown {
     from {
       opacity: 0;
